@@ -19,34 +19,61 @@
         Constructs & Introduction to Programming, all else is the same
       </p>
 
+      <!-- Curriculum Options -->
+
       <div class="curriculum__options curriculum-table">
         <div
           class="curriculum-table__heading curriculum-table__heading--active"
+          data-class="beginner-heading"
         >
           <img
+            class="curriculum-table__img-inactive"
             src="https://assets.scaler.com/assets/academy/svg/beginner-e425805912482eb6b1b4aeb3bd681182da266ddd407003775f053aa0b3a92e29.svg.gz"
             alt="Beginner"
+          />
+          <img
+            class="curriculum-table__img-active"
+            alt="Beginner"
+            src="https://assets.scaler.com/assets/academy/svg/beginner-active-d18cfdee9e22e85390c2727bf27bb395599bea48038e834d669361210fddd799.svg.gz"
           />
           <span class="curriculum-table__title">Beginner</span>
           <span class="curriculum-table__toggler"></span>
         </div>
-        <div class="curriculum-table__heading">
+        <div
+          class="curriculum-table__heading"
+          data-class="intermediate-heading"
+        >
           <img
+            class="curriculum-table__img-inactive"
+            src="https://assets.scaler.com/assets/academy/svg/intermediate-048f25015f9579217aa6003046f17352e05af7334f880f377127b924c8b8207a.svg.gz"
+            alt="Intermediate"
+          />
+          <img
+            class="curriculum-table__img-active"
             alt="Intermediate"
             src="https://assets.scaler.com/assets/academy/svg/intermediate-active-b12b5102e98865043e82dd0e263c2b71f0312b19aa0f62a2e86bd14e11dc27fb.svg.gz"
           />
           <span class="curriculum-table__title">Intermediate</span>
           <span class="curriculum-table__toggler"></span>
         </div>
-        <div class="curriculum-table__heading">
+        <div class="curriculum-table__heading" data-class="advanced-heading">
           <img
+            class="curriculum-table__img-inactive"
             src="https://assets.scaler.com/assets/academy/svg/advanced-653b7e9152a8597a3487d8a31d2a408948aeaff459ed5964027e5234df083dc8.svg.gz"
             alt="Advanced"
+          />
+          <img
+            class="curriculum-table__img-active"
+            alt="Advanced"
+            src="https://assets.scaler.com/assets/academy/svg/advanced-active-03ab0d407ae83b3ac86ab65ca46090583b1eb3b036ef872d53256531f42ff3fa.svg.gz"
           />
           <span class="curriculum-table__title">Advanced</span>
           <span class="curriculum-table__toggler"></span>
         </div>
-        <div class="curriculum-table__col curriculum-table__col--active">
+        <div
+          class="curriculum-table__col curriculum-table__col--active"
+          data-class="beginner-col"
+        >
           <div class="curriculum-table__content">
             <p class="curriculum-table__description">
               I know bare minimum coding / starting from scratch
@@ -57,7 +84,7 @@
             </div>
           </div>
         </div>
-        <div class="curriculum-table__col">
+        <div class="curriculum-table__col" data-class="intermediate-col">
           <div class="curriculum-table__content">
             <p class="curriculum-table__description">
               I know coding in 1 programming language. I can build basic apps
@@ -68,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="curriculum-table__col">
+        <div class="curriculum-table__col" data-class="advanced-col">
           <div class="curriculum-table__content">
             <p class="curriculum-table__description">
               I am good at coding. I know basic DSA and problem solving. I can
@@ -82,11 +109,25 @@
         </div>
       </div>
 
+      <!-- Curriculum Details -->
+
       <div class="curriculum__details curriculum-info">
-        <div class="curriculum-info__card curriculum-info__card--blue">
+        <!-- Curriculum Info Blue Card -->
+        <div
+          class="curriculum-info__card curriculum-info__card--blue"
+          data-class="info-card-1"
+        >
+          <!-- Curriculum Blocker-1 -->
+          <div class="curriculum-info__blocker">
+            <img
+              src="https://assets.scaler.com/assets/academy/svg/seal-advanced-92f99dd32aea6815298d0417f1720f14da36c2ea4f499c9ee6fa3c81956f4b85.svg.gz"
+            />
+          </div>
           <div class="curriculum-info__heading">
             <h3 class="curriculum-info__title">Introduction to Programming</h3>
-            <div class="curriculum-info__serial">1</div>
+            <div class="curriculum-info__serial" data-class="info-serial-1">
+              1
+            </div>
           </div>
           <div class="curriculum-info__duration">
             <img
@@ -103,7 +144,18 @@
             <li class="curriculum-info__point">Loops</li>
           </ul>
         </div>
-        <div class="curriculum-info__card curriculum-info__card--purple">
+
+        <!-- Curriculum Info Purple Card -->
+        <div
+          class="curriculum-info__card curriculum-info__card--purple"
+          data-class="info-card-2"
+        >
+          <!-- Curriculum Blocker-2 -->
+          <div class="curriculum-info__blocker">
+            <img
+              src="https://assets.scaler.com/assets/academy/svg/seal-advanced-92f99dd32aea6815298d0417f1720f14da36c2ea4f499c9ee6fa3c81956f4b85.svg.gz"
+            />
+          </div>
           <img
             class="curriculum__connector"
             src="https://assets.scaler.com/assets/academy/svg/arrow1-72014b1b01d81d6695cb8e4e2d47d7a073549d48b1c58864051689fddb6cb635.svg.gz"
@@ -111,7 +163,9 @@
           />
           <div class="curriculum-info__heading">
             <h3 class="curriculum-info__title">Programming Constructs</h3>
-            <div class="curriculum-info__serial">2</div>
+            <div class="curriculum-info__serial" data-class="info-serial-2">
+              2
+            </div>
           </div>
           <div class="curriculum-info__duration">
             <img
@@ -133,7 +187,12 @@
             <li class="curriculum-info__point">OOPS</li>
           </ul>
         </div>
-        <div class="curriculum-info__card curriculum-info__card--orange">
+
+        <!-- Curriculum Info Orange Card -->
+        <div
+          class="curriculum-info__card curriculum-info__card--orange"
+          data-class="info-card-3"
+        >
           <img
             class="curriculum__connector"
             src="https://assets.scaler.com/assets/academy/svg/arrow1-72014b1b01d81d6695cb8e4e2d47d7a073549d48b1c58864051689fddb6cb635.svg.gz"
@@ -143,7 +202,9 @@
             <h3 class="curriculum-info__title">
               Problem Solving & CS Fundamentals
             </h3>
-            <div class="curriculum-info__serial">3</div>
+            <div class="curriculum-info__serial" data-class="info-serial-3">
+              3
+            </div>
           </div>
           <div class="curriculum-info__duration">
             <img
@@ -170,17 +231,9 @@
             src="https://assets.scaler.com/assets/academy/svg/special-arrow-fda167db921d6550f399ba6ed902018d7ceec2c951211e8ecac2255c0119c939.svg.gz"
           />
         </div>
-        <div class="curriculum-info__blocker">
-          <img
-            src="https://assets.scaler.com/assets/academy/svg/seal-advanced-92f99dd32aea6815298d0417f1720f14da36c2ea4f499c9ee6fa3c81956f4b85.svg.gz"
-          />
-        </div>
-        <div class="curriculum-info__blocker">
-          <img
-            src="https://assets.scaler.com/assets/academy/svg/seal-advanced-92f99dd32aea6815298d0417f1720f14da36c2ea4f499c9ee6fa3c81956f4b85.svg.gz"
-          />
-        </div>
       </div>
+
+      <!-- Curriculum Specialisation -->
 
       <div class="curriculum__specialisation specialisation">
         <h3 class="specialisation__heading">

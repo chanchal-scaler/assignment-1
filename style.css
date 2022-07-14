@@ -60,6 +60,17 @@ img {
   padding: .8rem;
 }
 
+.curriculum-table__img-inactive,
+.curriculum-table__heading--active .curriculum-table__img-active {
+  display: block;
+}
+
+.curriculum-table__heading--active .curriculum-table__img-inactive,
+.curriculum-table__img-active {
+  display: none;
+}
+
+
 .curriculum-table__heading--active {
   background-color: #0041ca;
   color: white;
@@ -138,16 +149,11 @@ img {
 }
 
 .curriculum-info__card {
+  position: relative;
   background-color: white;
   padding: 0rem 1rem;
   border-radius: 1rem;
   text-align: left;
-  opacity: 1;
-  -webkit-transition: all .1s linear;
-    -moz-transition: all .1s linear;
-    -ms-transition: all .1s linear;
-    -o-transition: all .1s linear;
-    transition:  all .1s linear;
 }
 
 .curriculum-info__blocker {
@@ -156,6 +162,13 @@ img {
   z-index: 2;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 90%;
+}
+
+.curriculum-info__blocker img{
+  width: 80%;
+  height: auto;
 }
 
 .curriculum-info__card--inactive {
@@ -163,7 +176,7 @@ img {
 }
 
 .curriculum-info__card--inactive .curriculum-info__blocker {
-  display: block;
+  display: flex;
 }
 
 .curriculum-info__heading {
@@ -320,10 +333,12 @@ img {
 
 .specialisation__col--blue{
   background-color: #b7dcff;
+  border-radius: .5rem 0 0 .5rem;
 }
 
 .specialisation__col--green{
   background-color: #b9efb7;
+  border-radius: 0 .5rem .5rem 0;
 }
 
 .specialisation__col--blue .specialisation__title img{
@@ -418,6 +433,11 @@ img {
   margin-left: -6.8rem;
   margin-top: 12rem;
   z-index: -1;
+}
+
+.curriculum-info__card--inactive 
+.curriculum__connector {
+  display: none;
 }
 
 
