@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500;700&display=swap");
+
+$background-color: #e7f3ff;
+$font-color: #021028;
+$secondary-font-color: #4e5f72;
+$curriculum-inactive-color: #b7dcff;
+$curriculum-active-color: #0f8cff;
+$curriculum-table-font-color: #5b6f81;
+$white-color: #fff;
+$curriculum-heading-blue: #0041ca;
+$curriculum-heading-green: #17cc10;
+$info-blue-color: #006ada;
+$info-purple-color: #9243ce;
+$info-orange-color: #fc9100;
+$curriculum-toggler-border-color: #bac6d8;
+$curriculum-toggler-bg-color: #d6dee5;
+$curriculum-toggler-shadow-color: rgba(2, 16, 40, 0.48);
+$curriculum-duration-light-purple: #e9d9f5;
+$curriculum-duration-purple: #7435a4;
+$curriculum-duration-light-orange: #fee9cc;
+$curriculum-duration-orange: #c97400;
+$specialisation-col-bg-green: #b9efb7;
+$specialisation-col-img-blue: #87c5ff;
+$specialisation-col-img-green: #8be587;
+$specialisation-serial-blue: #0f5499;
+$specialisation-serial-green: #1c7a09;
+$specialisation-triangle-border-blue: #87c5ff;
+$specialisation-triangle-border-green: #8be587;
+
+@mixin flex-wrap() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition($time) {
+  -webkit-transition: all $time linear;
+  -moz-transition: all $time linear;
+  -ms-transition: all $time linear;
+  -o-transition: all $time linear;
+  transition: all $time linear;
+}
+
+body {
+  background-color: $background-color;
+}
+
+img {
+  user-select: none;
+}
+
+.curriculum {
+  font-family: "Mulish", sans-serif;
+  color: $font-color;
+  width: 90%;
+  max-width: 70rem;
+  margin: 4rem auto;
+  text-align: center;
+
+  &__heading {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__description {
+    color: $secondary-font-color;
+    font-size: 1.5rem;
+  }
+
+  &__spline {
+    margin-left: -13rem;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__connector {
+    margin-top: 12rem;
+    margin-left: -6.8rem;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__specialisation {
+    margin-top: 6rem;
+  }
+}
+
+.heading__underlined-background {
+  background-image: url(https://assets.scaler.com/assets/academy/svg/highlighter-8c0b59f762f05e078f2ca0caa5bb38a2a9056113e6164e30e145ec068a5e384d.svg);
+  background-position: 0rem 1.8rem;
+  background-repeat: no-repeat;
+}
+
+.curriculum-table {
+  margin: 2rem auto;
+  @include flex-wrap();
+  cursor: pointer;
+
+  &__col {
+    flex: (100% / 3);
+    background-color: $curriculum-inactive-color;
+    color: $curriculum-table-font-color;
+  }
+
+  &__col--active {
+    color: $white-color;
+    background-color: $curriculum-active-color;
+
+    .curriculum-table__status {
+      color: $white-color;
+    }
+  }
+
+  &__col--active .curriculum-table__status {
+    color: $white-color;
+  }
+
+  &__heading {
+    @include flex-center();
+    padding: 0.8rem 0;
+    flex: (100% / 3);
+    color: $font-color;
+    background-color: $white-color;
+  }
+
+  &__heading--active {
+    color: $white-color;
+    background-color: $curriculum-heading-blue;
+  }
+
+  &__heading--active .curriculum-table__toggler {
+    background-color: $curriculum-heading-green;
+
+    &::before {
+      margin-left: 0;
+    }
+  }
+
+  &__heading--active .curriculum-table__toggler::before {
+    margin-left: 0;
+  }
+
+  &__heading img {
+    padding: 0 0.5rem;
+  }
+
+  &__toggler {
+    width: 3.5rem;
+    height: 1rem;
+    margin-left: 0.8rem;
+    border: 0.1rem solid $curriculum-toggler-border-color;
+    border-radius: 0.75rem;
+    background-color: $curriculum-toggler-bg-color;
+    @include transition(0.1s);
+  }
+
+  &__toggler::before {
+    content: "";
+    width: 1.8rem;
+    height: 1rem;
+    margin-left: -1.7rem;
+    position: absolute;
+    border-radius: 0.75rem;
+    background-color: $white-color;
+    box-shadow: 0 0.2rem 0.32rem 0 $curriculum-toggler-shadow-color;
+    @include transition(0.1s);
+  }
+
+  &__content {
+    height: 100%;
+    padding: 0 2rem;
+    @include flex-column();
+    justify-content: space-between;
+  }
+
+  &__status {
+    margin: 0;
+    color: $curriculum-heading-blue;
+    font-weight: bold;
+  }
+}
+
+.curriculum-info {
+  display: flex;
+  column-gap: 3rem;
+  text-align: left;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-top: 2rem;
+    padding: 0 0.5rem;
+    font-weight: bold;
+  }
+
+  &__card {
+    padding: 0rem 1rem;
+    flex: (100% / 3);
+    background-color: $white-color;
+    border-radius: 1rem;
+    text-align: left;
+    opacity: 1;
+    @include transition(0.1s);
+  }
+
+  &__card--blue .curriculum-info__serial {
+    background-color: $info-blue-color;
+  }
+
+  &__card--blue .curriculum-info__point::before {
+    background-color: $info-blue-color;
+  }
+
+  &__card--blue .curriculum-info__duration span {
+    background-color: $background-color;
+    color: $info-blue-color;
+  }
+
+  &__card--purple .curriculum-info__serial {
+    background-color: $info-purple-color;
+  }
+
+  &__card--purple .curriculum-info__point::before {
+    background-color: $info-purple-color;
+  }
+
+  &__card--purple .curriculum-info__duration span {
+    background-color: $curriculum-duration-light-purple;
+    color: $curriculum-duration-purple;
+  }
+
+  &__card--orange .curriculum-info__serial {
+    background-color: $info-orange-color;
+  }
+
+  &__card--orange .curriculum-info__point::before {
+    background-color: $info-orange-color;
+  }
+
+  &__card--orange .curriculum-info__duration span {
+    background-color: $curriculum-duration-light-orange;
+    color: $curriculum-duration-orange;
+  }
+
+  &__card--inactive {
+    opacity: 0.5;
+  }
+
+  &__serial {
+    height: 2.5rem;
+    min-width: 2rem;
+    padding: 0.3rem 0.1rem;
+    position: relative;
+    color: $white-color;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  &__serial::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 0 0 1.15rem 1.15rem;
+    border-color: $white-color transparent $white-color transparent;
+    display: block;
+    z-index: 1;
+  }
+
+  &__serial::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 1.15rem 1.15rem 0;
+    border-color: $white-color transparent $white-color transparent;
+    display: block;
+    z-index: 1;
+  }
+
+  &__description {
+    padding-left: 1rem;
+  }
+
+  &__point {
+    position: relative;
+    padding-bottom: 0.8rem;
+    list-style-type: none;
+    color: $secondary-font-color;
+  }
+
+  &__point::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    content: "";
+    left: -1rem;
+    top: 0.5rem;
+    border-radius: 50%;
+    -webkit-filter: blur(0.05rem);
+    filter: blur(0.05rem);
+  }
+
+  &__duration {
+    display: flex;
+    align-items: center;
+  }
+
+  &__duration span {
+    margin: 0 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    -webkit-filter: blur(0.01rem);
+    filter: blur(0.01rem);
+  }
+}
+
+.specialisation {
+  &__serial {
+    height: 2.5rem;
+    min-width: 2rem;
+    padding: 0.3rem 0.1rem;
+    position: relative;
+    color: $white-color;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  &__serial::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 0 0 1.15rem 1.15rem;
+    border-color: $white-color transparent $white-color transparent;
+    display: block;
+    z-index: 1;
+  }
+
+  &__serial::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 1.15rem 1.15rem 0;
+    border-color: $white-color transparent $white-color transparent;
+    display: block;
+    z-index: 1;
+  }
+
+  &__table {
+    display: flex;
+    text-align: left;
+  }
+
+  &__point {
+    position: relative;
+    padding-bottom: 0.8rem;
+    list-style-type: none;
+    color: $secondary-font-color;
+  }
+
+  &__point::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    content: "";
+    left: -1rem;
+    top: 0.5rem;
+    border-radius: 50%;
+    -webkit-filter: blur(0.05rem);
+    filter: blur(0.05rem);
+  }
+
+  &__header {
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    color: $white-color;
+  }
+
+  &__col {
+    flex: (100% / 2);
+  }
+
+  &__col--blue {
+    background-color: $curriculum-inactive-color;
+  }
+
+  &__col--blue .specialisation__header {
+    background-color: $curriculum-active-color;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  &__col--blue .specialisation__title img {
+    border: 0.2rem solid $specialisation-col-img-blue;
+  }
+
+  &__col--blue .specialisation__serial {
+    background-color: $specialisation-serial-blue;
+  }
+
+  &__col--blue .specialisation__serial::after,
+  &__col--blue .specialisation__serial::before {
+    border-color: $curriculum-active-color transparent $curriculum-active-color
+      transparent;
+  }
+
+  &__col--blue .specialisation__duration {
+    color: $curriculum-active-color;
+  }
+
+  &__col--blue .specialisation__point::before {
+    background-color: $curriculum-active-color;
+  }
+
+  &__col--blue .specialisation__triangle {
+    border-color: $specialisation-triangle-border-blue transparent;
+    transform: rotateZ(270deg);
+  }
+
+  &__col--green {
+    background-color: $specialisation-col-bg-green;
+  }
+
+  &__col--green .specialisation__header {
+    background-color: $curriculum-heading-green;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  &__col--green .specialisation__title img {
+    border: 0.2rem solid $specialisation-col-img-green;
+  }
+
+  &__col--green .specialisation__serial {
+    background-color: $specialisation-serial-green;
+  }
+
+  &__col--green .specialisation__serial::after,
+  &__col--green .specialisation__serial::before {
+    border-color: $curriculum-heading-green transparent
+      $curriculum-heading-green transparent;
+  }
+
+  &__col--green .specialisation__duration {
+    color: $curriculum-heading-green;
+  }
+
+  &__point::before {
+    background-color: $curriculum-heading-green;
+  }
+
+  &__triangle {
+    border-color: $specialisation-triangle-border-green transparent;
+    transform: rotateZ(90deg);
+  }
+
+  &__col--green .specialisation__point::before {
+    background-color: $curriculum-heading-green;
+  }
+
+  &__col--green .specialisation__triangle {
+    border-color: $specialisation-triangle-border-green transparent;
+    transform: rotateZ(90deg);
+  }
+
+  &__title {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title img {
+    margin-left: 1rem;
+    border-radius: 50%;
+  }
+
+  &__heading {
+    font-weight: normal;
+  }
+
+  &__duration {
+    margin: 0 0 0 0.23rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.31rem;
+    background-color: $background-color;
+  }
+
+  &__triangle {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-style: solid;
+    top: 1.4rem;
+    border-width: 0 1rem 1.25rem 1rem;
+  }
+
+  &__or {
+    margin-left: -1.1rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    position: absolute;
+    font-weight: bold;
+    background-color: $white-color;
+    border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .curriculum__spline,
+  .specialisation__or,
+  .curriculum-info__duration img,
+  .curriculum-table__col,
+  .curriculum-table__toggler,
+  .specialisation__triangle,
+  .specialisation__title img,
+  .specialisation__serial {
+    display: none;
+  }
+
+  .curriculum-table {
+    border-radius: 2rem;
+  }
+
+  .curriculum-table__heading {
+    padding: 1rem 0;
+    @include flex-column();
+  }
+
+  .curriculum-table__col--active {
+    display: block;
+    background-color: $curriculum-heading-blue;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  .curriculum-info {
+    @include flex-wrap();
+
+    &__card {
+      margin-bottom: 2rem;
+      text-align: center;
+      flex: 100%;
+    }
+
+    &__duration {
+      @include flex-center();
+    }
+
+    &__description {
+      @include flex-wrap();
+      text-align: left;
+    }
+    &__point {
+      margin-left: 1rem;
+      flex: (80% / 2);
+    }
+  }
+
+  .specialisation {
+    &__table {
+      column-gap: 1rem;
+    }
+
+    &__title {
+      @include flex-column();
+      margin-bottom: 0;
+      align-items: baseline;
+    }
+
+    &__duration {
+      margin: 1rem 0;
+    }
+
+    &__header {
+      padding: 0;
+    }
+
+    &__description {
+      padding: 0 0.2rem 0 1.5rem;
+    }
+
+    &__col {
+      border-radius: 0.5rem;
+    }
+
+    &__col--blue,
+    &__col--green {
+      background-color: $white-color;
+    }
+
+    &__col--blue .specialisation__header,
+    &__col--green .specialisation__header {
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+  }
+
+  .curriculum__specialisation {
+    margin-top: 2rem;
+  }
+}
