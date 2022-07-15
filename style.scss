@@ -137,14 +137,6 @@ img {
   &__heading--active {
     color: $white-color;
     background-color: $curriculum-heading-blue;
-
-    .curriculum-table__toggler {
-      background-color: $curriculum-heading-green;
-
-      &::before {
-        margin-left: 0;
-      }
-    }
   }
 
   &__heading--active .curriculum-table__toggler {

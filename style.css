@@ -88,12 +88,6 @@ img {
 .curriculum-table__heading--active .curriculum-table__toggler::before {
   margin-left: 0;
 }
-.curriculum-table__heading--active .curriculum-table__toggler {
-  background-color: #17cc10;
-}
-.curriculum-table__heading--active .curriculum-table__toggler::before {
-  margin-left: 0;
-}
 .curriculum-table__heading--active .curriculum-table__toggler::before {
   margin-left: 0;
 }
