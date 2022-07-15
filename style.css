@@ -66,6 +66,9 @@ img {
 .curriculum-table__col--active .curriculum-table__status {
   color: #fff;
 }
+.curriculum-table__col--active .curriculum-table__status {
+  color: #fff;
+}
 .curriculum-table__heading {
   display: flex;
   justify-content: center;
@@ -81,6 +84,15 @@ img {
 }
 .curriculum-table__heading--active .curriculum-table__toggler {
   background-color: #17cc10;
+}
+.curriculum-table__heading--active .curriculum-table__toggler::before {
+  margin-left: 0;
+}
+.curriculum-table__heading--active .curriculum-table__toggler {
+  background-color: #17cc10;
+}
+.curriculum-table__heading--active .curriculum-table__toggler::before {
+  margin-left: 0;
 }
 .curriculum-table__heading--active .curriculum-table__toggler::before {
   margin-left: 0;
@@ -145,9 +157,6 @@ img {
   opacity: 1;
   transition: all 0.1s linear;
 }
-.curriculum-info__card--inactive {
-  opacity: 0.5;
-}
 .curriculum-info__card--blue .curriculum-info__serial {
   background-color: #006ada;
 }
@@ -177,6 +186,9 @@ img {
 .curriculum-info__card--orange .curriculum-info__duration span {
   background-color: #fee9cc;
   color: #c97400;
+}
+.curriculum-info__card--inactive {
+  opacity: 0.5;
 }
 .curriculum-info__serial {
   height: 2.5rem;
@@ -345,6 +357,13 @@ img {
 }
 .specialisation__col--green .specialisation__duration {
   color: #17cc10;
+}
+.specialisation__point::before {
+  background-color: #17cc10;
+}
+.specialisation__triangle {
+  border-color: #8be587 transparent;
+  transform: rotateZ(90deg);
 }
 .specialisation__col--green .specialisation__point::before {
   background-color: #17cc10;
